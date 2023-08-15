@@ -1,0 +1,470 @@
+/* @mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+} */
+:root {
+  --border-radius: 4px;
+}
+
+.parent {
+  display: inline-flex;
+  width: 1480px;
+  height: 790px;
+  background-color: #2b2a2a;
+
+  .container1 {
+    margin-top: 50px;
+    width: 400px;
+    height: 700px;
+    display: block;
+    background-color: #EAEAEA;
+    margin-right: 2px;
+    border-radius: var(--border-radius);
+    border-top-right-radius: 0%;
+    margin-left: 100px;
+    box-shadow: 0px 0px 10px 1px #0f0f0f;
+
+    /* rgb(4, 51, 65) */
+    .Navbar {
+      width: 400px;
+      height: 80px;
+      background-color: rgb(3, 4, 4);
+      border-top-right-radius: 0px;
+      border-radius: var(--border-radius);
+      border-top-right-radius: 0%;
+      color: aliceblue;
+      display: flex;
+      gap: 10px;
+
+      .dropdown-menu {
+        position: relative;
+        top: -8px;
+        left: 50px;
+        background-color: #292e2e;
+        border-radius: 5px;
+        padding: 0.1rem;
+        width: 200px;
+        height: 300px;
+        cursor: pointer;
+
+        .dropdownitem {
+
+          display: flex;
+          margin-left: -30px;
+          color: rgb(248, 245, 245);
+          width: 180px;
+          height: 50px;
+          padding: 0.4rem;
+
+          .img {
+            width: 40px;
+            height: 40px;
+            margin-right: 7px;
+            opacity: 0.5;
+            transition: var(--speed);
+          }
+
+          .button {
+            width: 120px;
+            height: 60px;
+            margin-top: -6px;
+            border-radius: 1%;
+            cursor: pointer;
+            background-color: rgb(2, 2, 17);
+            color: aliceblue;
+            background-color: #292e2e;
+            border-style: hidden;
+            text-align: start;
+
+          }
+
+          .button:hover {
+            background-color: rgb(66, 66, 66);
+          }
+        }
+
+        .dropdownitem:hover {
+          background-color: rgb(66, 66, 66);
+        }
+      }
+
+      .dropdown-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: var(--speed) ease;
+      }
+
+      .dropdown-menu.inactive {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: var(--speed) ease;
+      }
+
+      .logo {
+
+        width: fit-content;
+        font-size: 2rem;
+        text-align: left;
+        transform: scale();
+        display: inline-flex;
+        color: aliceblue;
+        background: linear-gradient(to right, #f7f5f4, #d0db07);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        pointer-events: none;
+        animation: fade 2s ease-in 1s;
+        margin-top: 12px;
+      }
+
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .profile {
+        width: 60px;
+        height: 70px;
+        margin-top: -10px;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        font-size: 20px;
+        color: aliceblue;
+        cursor: pointer;
+        margin-left: 180px;
+
+        .img {
+          display: flex;
+          margin-top: 20px;
+          margin-left: 0px;
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
+          border-radius: 50%;
+          align-self: flex-end;
+        }
+      }
+    }
+
+    .search {
+      margin-left: 1px;
+      margin-top: 1px;
+      border-bottom: 4px solid rgb(12, 24, 24);
+
+      .searchform {
+        color: rgb(13, 12, 12);
+        cursor: pointer;
+
+        .input {
+          height: 25px;
+          width: 387px;
+          background-color: transparent;
+          color: rgb(9, 9, 9);
+          padding: 5px;
+          outline: auto;
+          border: none;
+
+          &::placeholder {
+            color: rgb(16, 12, 12);
+            font-size: 15px;
+          }
+        }
+      }
+
+      .userform {
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        color: rgb(12, 11, 9);
+        gap: 3px;
+
+        &:hover {
+          background-color: rgba(34, 39, 41, 0.882);
+          cursor: pointer;
+          color: white;
+        }
+      }
+
+      .userform img {
+        display: inline-flex;
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+
+    .chat {
+      margin-left: 1px;
+      margin-top: 7px;
+      overflow-y: scroll;
+
+      .userchat {
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        color: rgb(13, 13, 13);
+        gap: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(34, 39, 41, 0.882);
+          color: aliceblue;
+        }
+
+        .img {
+          display: inline-flex;
+          margin-top: -10px;
+          margin-left: 10px;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .userchatinfo {
+          .span {
+            font-size: 30px;
+            font-weight: 400;
+          }
+
+          .p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .chat::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* cointainer2 */
+  .container2 {
+    margin-top: 50px;
+    display: flexbox;
+    width: 900px;
+    height: 700px;
+    background-color: rgb(231, 238, 238);
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 10px 1px #0f0f0f;
+
+    .Navbar2 {
+      display: flex;
+      width: 900px;
+      height: 80px;
+      background-color: rgb(3, 4, 4);
+      border-radius: var(--border-radius);
+      color: aliceblue;
+
+      .img {
+
+        width: 50px;
+        border-radius: 50%;
+        height: 50px;
+        margin-left: 10px;
+        margin-top: 20px;
+      }
+
+      .friend-name {
+        width: 120px;
+        margin-left: 7px;
+        margin-top: 20px;
+        font-size: 40px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+
+      .iconscointainer {
+        display: inline-flex;
+        margin-left: 600px;
+        height: 40px;
+        margin-top: 20px;
+        border-radius: 5px;
+        width: 90px;
+        background-color: rgb(3, 4, 4);
+        gap: 10px;
+
+        .videocall {
+          border-radius: 5px;
+          border-radius: 15px solid rgb(4, 51, 65);
+          width: 50%;
+          background-color: rgb(3, 4, 4);
+          padding: 0.2rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgba(92, 97, 98, 0.944);
+          }
+        }
+
+        .call {
+          border-radius: 5px;
+          border-radius: 15px solid rgb(4, 51, 65);
+          width: 50%;
+          background-color: rgb(3, 4, 4);
+          padding: 0.2rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgba(92, 97, 98, 0.944);
+          }
+        }
+
+      }
+    }
+
+    .messages {
+      background-image: url(../Images/chat_baground.jpg);
+      background-color: rgb(206, 238, 244);
+      height: 560px;
+      overflow-y: scroll;
+
+      .message {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 50px;
+
+        .userinfo {
+          display: flex;
+          flex-direction: column;
+
+          .img {
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .messagebox {
+            margin-left: 5px;
+            width: max-content;
+            padding: 0.3rem;
+          }
+        }
+
+        .messagecontent {
+          background-color: rgb(214, 250, 248);
+          height: 13px;
+          margin-top: 10px;
+          width: max-content;
+          padding: 1rem;
+          color: black;
+          border-radius: 0px 20px 10px 10px;
+        }
+
+        .imgcontent {
+          width: 20%;
+        }
+
+        &.owner {
+          flex-direction: row-reverse;
+
+          .messagecontent {
+            background-color: rgb(4, 51, 65);
+            height: 13px;
+            margin-top: 10px;
+            width: max-content;
+            padding: 1rem;
+            color: #e2e2e3;
+            border-radius: 10px 20px 0px 10px;
+          }
+        }
+      }
+    }
+
+    .messages::-webkit-scrollbar {
+      display: none;
+    }
+
+    .messagesend {
+      display: flex;
+      width: 900px;
+      height: 60px;
+      background-color: rgb(3, 4, 4);
+      overflow: hidden;
+      border-radius: var(--border-radius);
+
+      .input {
+        margin-left: 15px;
+        margin-top: 8px;
+        height: 30px;
+        width: 450px;
+        background-color: transparent;
+        font-size: 20px;
+        color: white;
+        padding: 5px;
+        outline: auto;
+        border-radius: 5px;
+
+        &::placeholder {
+          color: white;
+          font-size: 20px;
+        }
+      }
+
+      .send {
+        margin-top: 8px;
+        margin-left: 250px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0px;
+
+        .file {
+          height: 40px;
+          width: 25px;
+          cursor: pointer;
+          border-radius: 20px;
+
+          &:hover {
+            border: solid white 1px;
+          }
+        }
+      }
+
+      .button {
+        margin-top: 8px;
+        margin-left: 40px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: solid rgb(17, 16, 16);
+        cursor: pointer;
+        background-color: rgb(0, 0, 0);
+        background-image: url(../Images/send_button.png);
+        background-position: 9px;
+        background-size: 30px;
+        background-repeat: no-repeat;
+
+        &:hover {
+          border: solid white;
+        }
+      }
+    }
+  }
+}
